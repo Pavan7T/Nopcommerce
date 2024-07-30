@@ -48,15 +48,15 @@ public class TestBase extends AbstractTestNGCucumberTests{
 	// testng.xml file
 	@BeforeSuite
 	@Parameters({ "browser" })
-	public void startDriver(@Optional("chrome") String browserName) {
+	public void startDriver(@Optional("firefox") String browserName) {
 		if (browserName.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver(chromeoption());
-			driver.manage().window().maximize();
+			
 			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\resources\\chromedriver.exe");
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			//System.setProperty("webdriver.firefox.driver", System.getProperty("user.dir") + "\\resources\\geckodriver.exe");
 			driver = new FirefoxDriver(firefoxOption());
-			driver.manage().window().maximize();
+			
 		// Headless driver addition
 		} else if (browserName.equalsIgnoreCase("headless")) {
 			DesiredCapabilities caps = new DesiredCapabilities();
