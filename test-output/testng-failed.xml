@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [nopcommerce regression suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="firefox"/>
+  <test thread-count="5" name="regression test(failed)">
+    <classes>
+      <class name="tests.AddToWishListTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="startDriver"/>
+          <include name="stopDriver"/>
+          <include name="tearDownClass"/>
+          <include name="UserAddsToWishList"/>
+          <include name="userSearchesProduct"/>
+        </methods>
+      </class> <!-- tests.AddToWishListTest -->
+      <class name="tests.ContactUsTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="startDriver"/>
+          <include name="userOpensContactUs"/>
+          <include name="stopDriver"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- tests.ContactUsTest -->
+      <class name="tests.AddProductToShppoingCartTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="startDriver"/>
+          <include name="UserRemovesFromCart"/>
+          <include name="tearDownClass"/>
+          <include name="stopDriver"/>
+          <include name="UserSearchesProduct"/>
+          <include name="UserAddsToCart"/>
+        </methods>
+      </class> <!-- tests.AddProductToShppoingCartTest -->
+      <class name="tests.AddToCompareTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="startDriver"/>
+          <include name="UserClearsTable"/>
+          <include name="tearDownClass"/>
+          <include name="stopDriver"/>
+          <include name="UserComapresProducts"/>
+        </methods>
+      </class> <!-- tests.AddToCompareTest -->
+      <class name="tests.UserRegistrationTestWithDDTAndJavaFaker">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="startDriver"/>
+          <include name="userRegitsersSuccessfully"/>
+          <include name="userLogout"/>
+          <include name="stopDriver"/>
+          <include name="tearDownClass"/>
+          <include name="userLogin"/>
+        </methods>
+      </class> <!-- tests.UserRegistrationTestWithDDTAndJavaFaker -->
+    </classes>
+  </test> <!-- regression test(failed) -->
+</suite> <!-- Failed suite [nopcommerce regression suite] -->
