@@ -3,16 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.AddToCompareTest">
+      <class name="tests.ProductReviewTest">
         <methods>
           <include name="setUpClass"/>
           <include name="startDriver"/>
-          <include name="UserClearsTable"/>
+          <include name="RegisteredUserReveiwsProduct"/>
           <include name="tearDownClass"/>
           <include name="stopDriver"/>
-          <include name="UserComapresProducts"/>
+          <include name="userRegitsersSuccessfully"/>
+          <include name="userLogout"/>
         </methods>
-      </class> <!-- tests.AddToCompareTest -->
+      </class> <!-- tests.ProductReviewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

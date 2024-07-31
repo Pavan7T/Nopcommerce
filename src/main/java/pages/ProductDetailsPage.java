@@ -30,7 +30,7 @@ public class ProductDetailsPage extends PageBase{
 	public WebElement shoppingCartLink;
 
 	
-	public void openSendEmail() {
+	public void openSendEmail() {  
 		clickBtn(emailFriendBtn);
 	}
 	

@@ -1,60 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [nopcommerce regression suite]" guice-stage="DEVELOPMENT">
-  <parameter name="browser" value="firefox"/>
-  <test thread-count="5" name="regression test(failed)">
+<suite thread-count="2" parallel="tests" name="Failed suite [nopcommerce regression suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="Parallel firefox test(failed)">
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="tests.AddToWishListTest">
+      <class name="tests.MyAccountParallelTest">
         <methods>
-          <include name="setUpClass"/>
-          <include name="startDriver"/>
-          <include name="stopDriver"/>
-          <include name="tearDownClass"/>
-          <include name="UserAddsToWishList"/>
-          <include name="userSearchesProduct"/>
-        </methods>
-      </class> <!-- tests.AddToWishListTest -->
-      <class name="tests.ContactUsTest">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="startDriver"/>
-          <include name="userOpensContactUs"/>
-          <include name="stopDriver"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- tests.ContactUsTest -->
-      <class name="tests.AddProductToShppoingCartTest">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="startDriver"/>
-          <include name="UserRemovesFromCart"/>
-          <include name="tearDownClass"/>
-          <include name="stopDriver"/>
-          <include name="UserSearchesProduct"/>
-          <include name="UserAddsToCart"/>
-        </methods>
-      </class> <!-- tests.AddProductToShppoingCartTest -->
-      <class name="tests.AddToCompareTest">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="startDriver"/>
-          <include name="UserClearsTable"/>
-          <include name="tearDownClass"/>
-          <include name="stopDriver"/>
-          <include name="UserComapresProducts"/>
-        </methods>
-      </class> <!-- tests.AddToCompareTest -->
-      <class name="tests.UserRegistrationTestWithDDTAndJavaFaker">
-        <methods>
-          <include name="setUpClass"/>
           <include name="startDriver"/>
           <include name="userRegitsersSuccessfully"/>
-          <include name="userLogout"/>
           <include name="stopDriver"/>
-          <include name="tearDownClass"/>
+          <include name="userCanChangePassword"/>
           <include name="userLogin"/>
+          <include name="userLogout"/>
         </methods>
-      </class> <!-- tests.UserRegistrationTestWithDDTAndJavaFaker -->
+      </class> <!-- tests.MyAccountParallelTest -->
     </classes>
-  </test> <!-- regression test(failed) -->
+  </test> <!-- Parallel firefox test(failed) -->
+  <test thread-count="2" parallel="tests" name="Parallel chrome test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="tests.UserRegistrationParallelTest">
+        <methods>
+          <include name="userLogin"/>
+          <include name="startDriver"/>
+          <include name="stopDriver"/>
+          <include name="userLogout"/>
+          <include name="userRegitsersSuccessfully"/>
+        </methods>
+      </class> <!-- tests.UserRegistrationParallelTest -->
+    </classes>
+  </test> <!-- Parallel chrome test(failed) -->
 </suite> <!-- Failed suite [nopcommerce regression suite] -->
